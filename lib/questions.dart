@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class Questions extends StatelessWidget {
   final List<String> questions;
@@ -9,7 +10,13 @@ class Questions extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          Text(questions[index]),
+          Text(
+            questions[index],
+            style: TextStyle(fontSize: 20),
+          ),
+          SizedBox(
+            height: 10.0,
+          )
           /*ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
