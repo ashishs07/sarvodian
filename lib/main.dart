@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './pages/homepage.dart';
+import './pages/flashpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,7 +36,10 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.teal,
         accentColor: Colors.teal,
       ),
-      home: MyHomePage(_questions, _addQuestion),
+      routes: {
+        '/home': (BuildContext context) => MyHomePage(_questions, _addQuestion),
+      },
+      home: FlashPage(),
     );
   }
 }
