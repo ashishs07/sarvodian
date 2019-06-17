@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../question_manager.dart';
+import './mainfloatingbutton.dart';
 
 class MyHomePage extends StatelessWidget {
   final List<String> questions;
@@ -51,13 +52,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: QuestionManager(questions),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          addQuestion('This is a Question');
-        },
-        tooltip: 'Add Questions',
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: MainFloatingButton(addQuestion),
     );
   }
 }
