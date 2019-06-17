@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../question_manager.dart';
 import './mainfloatingbutton.dart';
+import './homedrawer.dart';
 
 class MyHomePage extends StatelessWidget {
   final List<String> questions;
@@ -12,40 +13,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            AppBar(
-              automaticallyImplyLeading: false,
-              title: Text('Choose'),
-            ),
-            ListTile(
-              title: Text('Browse Questions'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Events'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Batch Timings'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Sarvodaya Team'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Meritorious Students'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Contact Us'),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
+      drawer: HomeDrawer(),
       appBar: AppBar(
         title: Text('Sarvodian'),
       ),

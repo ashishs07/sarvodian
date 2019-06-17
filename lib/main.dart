@@ -31,15 +31,17 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Sarvodian',
       theme: ThemeData(
         primarySwatch: Colors.teal,
-        accentColor: Colors.teal,
+        accentColor: Colors.white,
       ),
       routes: {
+        '/': (BuildContext context) => FlashPage(),
         '/home': (BuildContext context) => MyHomePage(_questions, _addQuestion),
       },
-      home: FlashPage(),
+      //home: FlashPage(),
     );
   }
 }
