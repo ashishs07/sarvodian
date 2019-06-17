@@ -36,6 +36,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.teal,
         accentColor: Colors.white,
+        fontFamily: 'Karla',
       ),
       routes: {
         '/': (BuildContext context) => FlashPage(),

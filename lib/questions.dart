@@ -8,26 +8,37 @@ class Questions extends StatelessWidget {
 
   Widget _buildQuestion(BuildContext context, int index) {
     return Card(
+      semanticContainer: true,
+      margin: EdgeInsets.all(7.0),
       child: Column(
         children: <Widget>[
-          Text(
-            questions[index],
-            style: TextStyle(fontSize: 20),
+          Container(
+              margin: EdgeInsets.all(10.0),
+              child: Text(
+                questions[index],
+                style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                ),
+              )),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10.0),
+            height: 1.0,
+            color: Theme.of(context).primaryColor,
           ),
-          SizedBox(
-            height: 10.0,
-          )
-          /*ButtonBar(
-            alignment: MainAxisAlignment.center,
+          ButtonBar(
             children: <Widget>[
-              FlatButton(
-                  child: Text('Details'),
-                  onPressed: () {
-                    Navigator.pushNamed<bool>(
-                        context, '/product/' + index.toString());
-                  }),
+              FloatingActionButton(
+                tooltip: 'Answer',
+                backgroundColor: Theme.of(context).primaryColor,
+                child: Icon(
+                  Icons.edit,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
             ],
-          )*/
+          )
         ],
       ),
     );
