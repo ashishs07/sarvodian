@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import './pages/homepage.dart';
-import './pages/flashpage.dart';
-import './pages/questionpage.dart';
+//import './pages/flashpage.dart';
+//import './pages/questionpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,9 +40,8 @@ class _MyAppState extends State<MyApp> {
         fontFamily: 'Karla',
       ),
       routes: {
-        '/': (BuildContext context) => FlashPage(),
-        '/home': (BuildContext context) => MyHomePage(_questions, _addQuestion),
-        '/question': (BuildContext context) => QuestionPage(),
+        //'/': (BuildContext context) => FlashPage(),
+        '/': (BuildContext context) => MyHomePage(_questions, _addQuestion),
       },
       //home: FlashPage(),
     );

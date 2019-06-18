@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import './pages/questionpage.dart';
 
 class Questions extends StatelessWidget {
   final List<String> questions;
@@ -35,7 +36,11 @@ class Questions extends StatelessWidget {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/question');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              QuestionPage(questions[index])));
                 },
               ),
             ],
