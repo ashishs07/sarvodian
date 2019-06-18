@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+import './eventspage.dart';
+import './batchtimingspage.dart';
+import './sarvodayateam.dart';
+import './studentspage.dart';
+import './contactpage.dart';
+
 class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,27 +18,54 @@ class HomeDrawer extends StatelessWidget {
           ),
           ListTile(
             title: Text('Browse Questions'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/');
+            },
           ),
           ListTile(
             title: Text('Events'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => EventsPage()));
+            },
           ),
           ListTile(
             title: Text('Batch Timings'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => BatchtimingsPage()));
+            },
           ),
           ListTile(
             title: Text('Sarvodaya Team'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => SarvodayateamPage()));
+            },
           ),
           ListTile(
             title: Text('Meritorious Students'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => StudentsPage()));
+            },
           ),
           ListTile(
             title: Text('Contact Us'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => ContactPage()));
+            },
           ),
         ],
       ),
