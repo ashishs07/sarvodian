@@ -28,14 +28,15 @@ class Questions extends StatelessWidget {
           ),
           ButtonBar(
             children: <Widget>[
-              FloatingActionButton(
-                tooltip: 'Answer',
-                backgroundColor: Theme.of(context).primaryColor,
+              RaisedButton(
+                color: Theme.of(context).primaryColor,
                 child: Icon(
                   Icons.edit,
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/question');
+                },
               ),
             ],
           )
