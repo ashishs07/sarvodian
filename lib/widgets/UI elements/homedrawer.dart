@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import './eventspage.dart';
-import './batchtimingspage.dart';
-import './sarvodayateam.dart';
-import './studentspage.dart';
-import './contactpage.dart';
+import 'package:sarvodian/pages/eventspage.dart';
+import 'package:sarvodian/pages/batchtimingspage.dart';
+import 'package:sarvodian/pages/sarvodayateam.dart';
+import 'package:sarvodian/pages/studentspage.dart';
+import 'package:sarvodian/pages/contactpage.dart';
 
 class HomeDrawer extends StatelessWidget {
   @override

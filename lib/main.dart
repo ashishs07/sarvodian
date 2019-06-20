@@ -40,10 +40,8 @@ class _MyAppState extends State<MyApp> {
         fontFamily: 'Karla',
       ),
       routes: {
-        //'/': (BuildContext context) => FlashPage(),
         '/': (BuildContext context) => MyHomePage(_questions, _addQuestion),
       },
-      //home: FlashPage(),
     );
   }
 }

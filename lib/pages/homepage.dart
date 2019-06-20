@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../question_manager.dart';
-import './homefloatingbutton.dart';
-import './homedrawer.dart';
+import '../questions.dart';
+import '../widgets/UI elements/homedrawer.dart';
+import '../widgets/UI elements/homefloatingbutton.dart';
 
 class MyHomePage extends StatelessWidget {
   final List<String> questions;
@@ -18,7 +18,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Sarvodian'),
       ),
       body: Center(
-        child: QuestionManager(questions),
+        child: Questions(questions),
       ),
       floatingActionButton: MainFloatingButton(addQuestion),
     );
