@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-class QuestionPage extends StatelessWidget {
+import '../widgets/UI elements/questiontitle.dart';
+
+class AnswerPage extends StatelessWidget {
   final String _question;
 
-  QuestionPage(this._question);
+  AnswerPage(this._question);
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +14,7 @@ class QuestionPage extends StatelessWidget {
           title: Text('Answer'),
         ),
         body: Column(children: <Widget>[
-          Container(
-              margin: EdgeInsets.all(10.0),
-              child: Text(
-                _question,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic,
-                ),
-              )),
+          QuestionTitle(_question),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10.0),
             height: 1.0,

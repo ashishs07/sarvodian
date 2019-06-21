@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-import './pages/questionpage.dart';
+import './pages/answerpage.dart';
+import './widgets/UI elements/questiontitle.dart';
 
 class Questions extends StatelessWidget {
   final List<String> questions;
@@ -14,15 +15,7 @@ class Questions extends StatelessWidget {
       margin: EdgeInsets.all(7.0),
       child: Column(
         children: <Widget>[
-          Container(
-              margin: EdgeInsets.all(10.0),
-              child: Text(
-                questions[index],
-                style: TextStyle(
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic,
-                ),
-              )),
+          QuestionTitle(questions[index]),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10.0),
             height: 1.0,
@@ -41,7 +34,7 @@ class Questions extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) =>
-                              QuestionPage(questions[index])));
+                              AnswerPage(questions[index])));
                 },
               ),
             ],
