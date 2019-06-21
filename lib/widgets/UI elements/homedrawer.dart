@@ -88,7 +88,7 @@ class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
+      child: ListView(
         children: <Widget>[
           AppBar(
             title: Text('Choose'),

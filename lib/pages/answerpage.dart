@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/UI elements/questiontitle.dart';
+import '../widgets/UI elements/colordividerline.dart';
 
 class AnswerPage extends StatelessWidget {
   final String _question;
@@ -10,16 +11,10 @@ class AnswerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Answer'),
-        ),
+        appBar: AppBar(title: Text('Answer')),
         body: Column(children: <Widget>[
           QuestionTitle(_question),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10.0),
-            height: 1.0,
-            color: Theme.of(context).primaryColor,
-          ),
+          ColorDividerLine(),
           Container(
               margin: EdgeInsets.all(20.0),
               child: TextField(

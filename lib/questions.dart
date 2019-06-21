@@ -3,6 +3,7 @@ import 'package:flutter/painting.dart';
 
 import './pages/answerpage.dart';
 import './widgets/UI elements/questiontitle.dart';
+import './widgets/UI elements/colordividerline.dart';
 
 class Questions extends StatelessWidget {
   final List<String> questions;
@@ -11,37 +12,25 @@ class Questions extends StatelessWidget {
 
   Widget _buildQuestion(BuildContext context, int index) {
     return Card(
-      semanticContainer: true,
-      margin: EdgeInsets.all(7.0),
-      child: Column(
-        children: <Widget>[
-          QuestionTitle(questions[index]),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10.0),
-            height: 1.0,
-            color: Theme.of(context).primaryColor,
-          ),
-          ButtonBar(
-            children: <Widget>[
-              RaisedButton(
-                color: Theme.of(context).primaryColor,
-                child: Icon(
-                  Icons.edit,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              AnswerPage(questions[index])));
-                },
-              ),
-            ],
-          )
-        ],
-      ),
-    );
+        semanticContainer: true,
+        margin: EdgeInsets.all(10.0),
+        child: Column(
+          children: <Widget>[
+            QuestionTitle(questions[index]),
+            ColorDividerLine(),
+            RaisedButton(
+              color: Theme.of(context).primaryColor,
+              child: Icon(Icons.edit),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            AnswerPage(questions[index])));
+              },
+            ),
+          ],
+        ));
   }
 
   Widget _buildQuestionList() {
