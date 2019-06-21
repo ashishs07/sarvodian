@@ -13,16 +13,19 @@ class HomeDrawer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           AppBar(
+            leading: Icon(Icons.clear_all),
             automaticallyImplyLeading: false,
             title: Text('Choose'),
           ),
           ListTile(
+            leading: Icon(Icons.view_list),
             title: Text('Browse Questions'),
             onTap: () {
               Navigator.pushNamed(context, '/');
             },
           ),
           ListTile(
+            leading: Icon(Icons.event_note),
             title: Text('Events'),
             onTap: () {
               Navigator.push(
@@ -32,6 +35,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.access_time),
             title: Text('Batch Timings'),
             onTap: () {
               Navigator.push(
@@ -41,6 +45,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.people),
             title: Text('Sarvodaya Team'),
             onTap: () {
               Navigator.push(
@@ -50,6 +55,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.person),
             title: Text('Meritorious Students'),
             onTap: () {
               Navigator.push(
@@ -59,6 +65,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.call),
             title: Text('Contact Us'),
             onTap: () {
               Navigator.push(

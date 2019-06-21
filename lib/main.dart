@@ -36,8 +36,17 @@ class _MyAppState extends State<MyApp> {
       title: 'Sarvodian',
       theme: ThemeData(
         primarySwatch: Colors.teal,
+        primaryColor: Colors.teal,
         accentColor: Colors.white,
         fontFamily: 'Karla',
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.teal,
+          textTheme: ButtonTextTheme.accent,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          foregroundColor: Colors.teal,
+          backgroundColor: Colors.white,
+        ),
       ),
       routes: {
         '/': (BuildContext context) => MyHomePage(_questions, _addQuestion),
