@@ -57,11 +57,6 @@ class HomeDrawer extends StatelessWidget {
   Widget _buildMeritListTile(BuildContext context) {
     return ListTile(
       leading: Icon(Icons.person),
-      trailing: Switch(
-        value: true,
-        onChanged: (bool value) {},
-        activeColor: Theme.of(context).primaryColor,
-      ),
       title: Text('Meritorious Students'),
       onTap: () {
         Navigator.push(
