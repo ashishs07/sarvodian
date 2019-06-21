@@ -7,24 +7,24 @@ Screenshots(As on 06/21/2019)-
   <table>
     <tr>
       <td style="text-align: center">
-      <img src="https://i.imgur.com/kxZMfQV.png" width="200"/>
+      <img src="https://i.imgur.com/kxZMfQV.png" width="300"/>
       </td>
       <td style="text-align: center">
-      <img src="https://i.imgur.com/niqGqk1.png" width="200"/>
+      <img src="https://i.imgur.com/niqGqk1.png" width="300"/>
       </td>
       <td style="text-align: center">
-      <img src="https://i.imgur.com/cRQldpb.png" width="200"/>
+      <img src="https://i.imgur.com/cRQldpb.png" width="300"/>
       </td>
     </tr>
     <tr>
       <td style="text-align: center">
-      <img src="https://i.imgur.com/1qnmOZx.png" width="200"/>
+      <img src="https://i.imgur.com/1qnmOZx.png" width="300"/>
       </td>
       <td style="text-align: center">
-      <img src="https://i.imgur.com/PaQ6hXW.png" width="200"/>
+      <img src="https://i.imgur.com/PaQ6hXW.png" width="300"/>
       </td>
       <td style="text-align: center">
-      <img src="https://i.imgur.com/4zyUdGg.png" width="200"/>
+      <img src="https://i.imgur.com/4zyUdGg.png" width="300"/>
       </td>
     </tr>
   </table>
