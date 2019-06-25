@@ -12,6 +12,7 @@ class MyApp extends StatefulWidget {
     return _MyAppState();
   }
 }
+//This will be removed
 
 class _MyAppState extends State<MyApp> {
   final List<String> _questions = [];
