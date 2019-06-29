@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
+import 'package:scoped_model/scoped_model.dart';
+
+import './scoped-models/main_smodel.dart';
+import './models/question_model.dart';
 
 import './pages/answerpage.dart';
 import './widgets/UI elements/questiontitle.dart';
 import './widgets/UI elements/colordividerline.dart';
 
 class Questions extends StatelessWidget {
-  final List<String> questions;
-
-  Questions(this.questions);
-
-  Widget _buildQuestion(BuildContext context, int index) {
+  Widget _buildQuestion(BuildContext context, QuestionModel question) {
     return Card(
         semanticContainer: true,
         margin: EdgeInsets.all(10.0),
         child: Column(
           children: <Widget>[
-            QuestionTitle(questions[index]),
+            QuestionTitle(question.question),
             ColorDividerLine(),
             RaisedButton(
               color: Theme.of(context).primaryColor,
@@ -26,18 +25,19 @@ class Questions extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            AnswerPage(questions[index])));
+                            AnswerPage(question.question)));
               },
             ),
           ],
         ));
   }
 
-  Widget _buildQuestionList() {
+  Widget _buildQuestionList(List<QuestionModel> questions) {
     Widget questionCard;
     if (questions.length > 0) {
       questionCard = ListView.builder(
-        itemBuilder: _buildQuestion,
+        itemBuilder: (BuildContext context, int index) =>
+            _buildQuestion(context, questions[index]),
         itemCount: questions.length,
       );
     } else {
@@ -48,6 +48,10 @@ class Questions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildQuestionList();
+    return ScopedModelDescendant<MainModel>(
+      builder: (BuildContext context, Widget child, MainModel model) {
+        return _buildQuestionList(model.allQuestion);
+      },
+    );
   }
 }

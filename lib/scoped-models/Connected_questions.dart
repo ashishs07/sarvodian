@@ -8,8 +8,9 @@ mixin ConnectedQuestions on Model {
   int _selQuestionIndex;
   UserModel _authenticatedUser;
 
-  void addProduct(question) {
+  void addQuestion(question) {
     _questions.add(question);
+    notifyListeners();
   }
 }
 

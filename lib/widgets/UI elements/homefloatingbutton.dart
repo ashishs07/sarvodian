@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sarvodian/models/question_model.dart';
+import 'package:scoped_model/scoped_model.dart';
+
+import '../../scoped-models/main_smodel.dart';
 
 class MainFloatingButton extends StatefulWidget {
-  final Function addQuestion;
-
-  MainFloatingButton(this.addQuestion);
-
   @override
   State<StatefulWidget> createState() {
     return _MainFloatingButton();
@@ -13,7 +13,6 @@ class MainFloatingButton extends StatefulWidget {
 
 class _MainFloatingButton extends State<MainFloatingButton> {
   String passValue;
-
   void _buildBottomModalSheet() {
     showModalBottomSheet(
         context: context,
@@ -24,14 +23,19 @@ class _MainFloatingButton extends State<MainFloatingButton> {
                   margin: EdgeInsets.all(20.0),
                   child: _buildQuestionTextField(),
                 ),
-                RaisedButton.icon(
-                  icon: Icon(Icons.add),
-                  label: Text('Add'),
-                  onPressed: () {
-                    widget.addQuestion(passValue);
-                    Navigator.pop(context);
+                ScopedModelDescendant<MainModel>(
+                  builder:
+                      (BuildContext context, Widget child, MainModel model) {
+                    return RaisedButton.icon(
+                      icon: Icon(Icons.add),
+                      label: Text('Add'),
+                      onPressed: () {
+                        model.addQuestion(QuestionModel(question: passValue));
+                        Navigator.pop(context);
+                      },
+                    );
                   },
-                ),
+                )
               ],
             ));
   }
