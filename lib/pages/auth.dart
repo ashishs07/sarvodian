@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
+
+import '../scoped-models/main_smodel.dart';
 
 import '../widgets/UI elements/10pxsizedbox.dart';
 
@@ -36,6 +39,13 @@ class _AuthPageState extends State<AuthPage> {
         suffixIcon: Icon(Icons.email),
         // border: OutlineInputBorder(),
       ),
+      validator: (String value) {
+        if (value.isEmpty ||
+            !RegExp(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+                .hasMatch(value)) {
+          return 'Email is required';
+        }
+      },
       keyboardType: TextInputType.emailAddress,
       onSaved: (String value) {
         _formData['email'] = value;
@@ -53,6 +63,14 @@ class _AuthPageState extends State<AuthPage> {
         suffixIcon: Icon(Icons.security),
         //border: OutlineInputBorder(),
       ),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Password is required';
+        }
+        if (value.length < 8) {
+          return 'Required 8+ characters';
+        }
+      },
       onSaved: (String value) {
         _formData['password'] = value;
       },
@@ -72,22 +90,25 @@ class _AuthPageState extends State<AuthPage> {
   }
 
   Widget _buildSubmitButton() {
-    return RaisedButton.icon(
-      label: Text('Submit'),
-      icon: Icon(
-        Icons.arrow_forward,
-      ),
-      onPressed: _submitForm,
+    return ScopedModelDescendant<MainModel>(
+      builder: (BuildContext context, Widget child, MainModel model) {
+        return RaisedButton.icon(
+          label: Text('Submit'),
+          icon: Icon(
+            Icons.arrow_forward,
+          ),
+          onPressed: () => _submitForm(model),
+        );
+      },
     );
   }
 
-//!_formKey.currentState.validate() ||
-  void _submitForm() {
-    if (!_formData['terms']) {
+  void _submitForm(MainModel model) {
+    if (!_formKey.currentState.validate() || !_formData['terms']) {
       return;
     }
     _formKey.currentState.save();
-    //login(_formData['email'], _formData['password']);
+    model.login(_formData['email'], _formData['password']);
     Navigator.pushReplacementNamed(context, '/home');
   }
 

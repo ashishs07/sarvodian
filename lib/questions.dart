@@ -16,6 +16,7 @@ class Questions extends StatelessWidget {
         child: Column(
           children: <Widget>[
             QuestionTitle(question.question),
+            Text(question.email),
             ColorDividerLine(),
             RaisedButton(
               color: Theme.of(context).primaryColor,

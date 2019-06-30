@@ -8,7 +8,12 @@ mixin ConnectedQuestions on Model {
   int _selQuestionIndex;
   UserModel _authenticatedUser;
 
-  void addQuestion(question) {
+  void addQuestion(que) {
+    final QuestionModel question = QuestionModel(
+      email: _authenticatedUser.email,
+      question: que,
+    );
+
     _questions.add(question);
     notifyListeners();
   }

@@ -12,7 +12,7 @@ class HomeDrawer extends StatelessWidget {
       leading: Icon(Icons.view_list),
       title: Text('Browse Questions'),
       onTap: () {
-        Navigator.pushNamed(context, '/');
+        Navigator.pushNamed(context, '/home');
       },
     );
   }
