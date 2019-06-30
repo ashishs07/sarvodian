@@ -12,9 +12,14 @@ mixin ConnectedQuestions on Model {
     final QuestionModel question = QuestionModel(
       email: _authenticatedUser.email,
       question: que,
+      answer: '',
     );
 
     _questions.add(question);
+    notifyListeners();
+  }
+
+  void notify() {
     notifyListeners();
   }
 }

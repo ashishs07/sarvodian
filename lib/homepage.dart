@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../questions.dart';
-import '../widgets/UI elements/homedrawer.dart';
-import '../widgets/UI elements/homefloatingbutton.dart';
+import 'package:sarvodian/widgets/questions_widgets/questions_list.dart';
+import 'package:sarvodian/widgets/questions_widgets/homedrawer.dart';
+import 'package:sarvodian/widgets/questions_widgets/homefloatingbutton.dart';
 
 class MyHomePage extends StatelessWidget {
   @override

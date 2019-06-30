@@ -3,8 +3,9 @@ import 'package:scoped_model/scoped_model.dart';
 
 import './scoped-models/main_smodel.dart';
 
-import './pages/homepage.dart';
-import './pages/auth.dart';
+import 'package:sarvodian/homepage.dart';
+import 'package:sarvodian/pages/auth.dart';
+import 'package:sarvodian/widgets/questions_widgets/answerpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -41,6 +42,24 @@ class _MyAppState extends State<MyApp> {
         routes: {
           '/': (BuildContext context) => AuthPage(),
           '/home': (BuildContext context) => MyHomePage(),
+        },
+        onGenerateRoute: (RouteSettings settings) {
+          final List<String> pathElements = settings.name.split('/');
+
+          if (pathElements[0] != '') {
+            return null;
+          }
+          if (pathElements[1] == 'question') {
+            final int index = int.parse(pathElements[2]);
+            return MaterialPageRoute<bool>(
+                builder: (BuildContext context) => AnswerPage(index));
+          }
+          return null;
+        },
+        onUnknownRoute: (RouteSettings settings) {
+          return MaterialPageRoute(
+            builder: (BuildContext context) => MyHomePage(),
+          );
         },
       ),
     );
