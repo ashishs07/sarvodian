@@ -55,16 +55,13 @@ class _AnswerPageState extends State<AnswerPage> {
     }
     _formKey.currentState.save();
 
-    print(passValue);
     final QuestionModel question = QuestionModel(
         question: model.allQuestion[widget.questionIndex].question,
         email: model.allQuestion[widget.questionIndex].email,
         answer: passValue);
-
-    model.allQuestion[widget.questionIndex] = question;
+    model.selectQuestion(widget.questionIndex);
+    model.updateQuestion(question);
     Navigator.pop(context);
-    model.notify();
-    print(passValue);
   }
 
   @override

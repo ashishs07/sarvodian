@@ -8,7 +8,7 @@ class QuestionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10.0),
+      margin: EdgeInsets.all(5.0),
       child: Text(
         _title,
         style: TextStyle(

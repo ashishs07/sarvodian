@@ -10,16 +10,12 @@ mixin ConnectedQuestions on Model {
 
   void addQuestion(que) {
     final QuestionModel question = QuestionModel(
-      email: _authenticatedUser.email,
       question: que,
       answer: '',
+      email: _authenticatedUser.email,
     );
 
     _questions.add(question);
-    notifyListeners();
-  }
-
-  void notify() {
     notifyListeners();
   }
 }
@@ -31,6 +27,25 @@ mixin QuestionSModel on ConnectedQuestions {
 
   int get selectedQuestionIndex {
     return _selQuestionIndex;
+  }
+
+  QuestionModel get selectedProduct {
+    if (selectedQuestionIndex == null) {
+      return null;
+    }
+    return _questions[selectedQuestionIndex];
+  }
+
+  void updateQuestion(que) {
+    _questions[selectedQuestionIndex] = que;
+    notifyListeners();
+  }
+
+  void selectQuestion(int index) {
+    _selQuestionIndex = index;
+    if (index != null) {
+      notifyListeners();
+    }
   }
 }
 
