@@ -6,6 +6,8 @@ import 'package:sarvodian/pages/sarvodayateam.dart';
 import 'package:sarvodian/pages/studentspage.dart';
 import 'package:sarvodian/pages/contactpage.dart';
 
+import 'package:sarvodian/widgets/admin_controls/admin_login.dart';
+
 class HomeDrawer extends StatelessWidget {
   Widget _buildBrowseListTile(BuildContext context) {
     return ListTile(
@@ -72,6 +74,17 @@ class HomeDrawer extends StatelessWidget {
       leading: Icon(Icons.call),
       title: Text('Contact Us'),
       onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (BuildContext context) => AdminLogin()));
+      },
+    );
+  }
+
+  Widget _buildAdminListTile(BuildContext context) {
+    return ListTile(
+      leading: Icon(Icons.control_point),
+      title: Text('Admin Controls'),
+      onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
@@ -103,6 +116,7 @@ class HomeDrawer extends StatelessWidget {
           _buildTeamListTile(context),
           _buildMeritListTile(context),
           _buildContactListTile(context),
+          _buildAdminListTile(context),
         ],
       ),
     );

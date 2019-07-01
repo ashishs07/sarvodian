@@ -22,7 +22,7 @@ class _AnswerPageState extends State<AnswerPage> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  Widget _buildAnswerTextField() {
+  Widget _buildAnswerTextField(MainModel model) {
     return Container(
       margin: EdgeInsets.all(20.0),
       child: TextFormField(
@@ -31,6 +31,7 @@ class _AnswerPageState extends State<AnswerPage> {
           border: OutlineInputBorder(),
           labelText: 'Enter Answer',
         ),
+        initialValue: model.allQuestion[widget.questionIndex].answer,
         onSaved: (String value) {
           passValue = value;
         },
@@ -73,10 +74,10 @@ class _AnswerPageState extends State<AnswerPage> {
             return Column(
               children: <Widget>[
                 QuestionTitle(model.allQuestion[widget.questionIndex].question),
-                ColorDividerLine(),
+                ColorDividerLine(10.0),
                 Form(
                   key: _formKey,
-                  child: _buildAnswerTextField(),
+                  child: _buildAnswerTextField(model),
                 ),
                 _buildAnswerSubmitButton(context, model),
               ],

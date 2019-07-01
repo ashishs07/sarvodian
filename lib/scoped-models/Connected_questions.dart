@@ -1,7 +1,7 @@
 import 'package:scoped_model/scoped_model.dart';
 
-import '../models/question_model.dart';
-import '../models/user_model.dart';
+import 'package:sarvodian/models/question_model.dart';
+import 'package:sarvodian/models/user_model.dart';
 
 mixin ConnectedQuestions on Model {
   List<QuestionModel> _questions = [];
