@@ -21,7 +21,6 @@ class _AuthPageState extends State<AuthPage> {
   };
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   DecorationImage _buildBackgroundImage() {
     return DecorationImage(
       image: AssetImage('assets/sarvo.jpg'),

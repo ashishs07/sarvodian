@@ -74,8 +74,10 @@ class HomeDrawer extends StatelessWidget {
       leading: Icon(Icons.call),
       title: Text('Contact Us'),
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext context) => AdminLogin()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => ContactPage()));
       },
     );
   }
@@ -85,10 +87,8 @@ class HomeDrawer extends StatelessWidget {
       leading: Icon(Icons.control_point),
       title: Text('Admin Controls'),
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) => ContactPage()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (BuildContext context) => AdminLogin()));
       },
     );
   }
