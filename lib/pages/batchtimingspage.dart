@@ -4,9 +4,6 @@ class BatchtimingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /* appBar: AppBar(
-        title: Text('Batch Timings'),
-      ),*/
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
