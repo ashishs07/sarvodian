@@ -17,10 +17,7 @@ class QuestionCard extends StatelessWidget {
         style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
       );
     }
-    return Text(
-      'Not answered Yet',
-      style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
-    );
+    return Text('');
   }
 
   @override
@@ -32,19 +29,7 @@ class QuestionCard extends StatelessWidget {
         children: <Widget>[
           QuestionTitle(question.question),
           ColorDividerLine(150.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Sol: ',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w400),
-              ),
-              _buildAnswer(),
-            ],
-          ),
+          _buildAnswer(),
           ColorDividerLine(10.0),
           Row(
             children: <Widget>[
