@@ -30,7 +30,9 @@ class MyHomePage extends StatelessWidget {
         return SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return QuestionCard(model.allQuestion[index], index);
+              return QuestionCard(
+                  model.allQuestion[model.allQuestion.length - index - 1],
+                  model.allQuestion.length - index - 1);
             },
             childCount: model.allQuestion.length,
           ),
