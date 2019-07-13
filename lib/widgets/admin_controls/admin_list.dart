@@ -4,15 +4,15 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 import 'package:sarvodian/models/question_model.dart';
 
-import 'package:sarvodian/widgets/questions_widgets/question_card.dart';
+import 'package:sarvodian/widgets/admin_controls/admin_card.dart';
 
-class Questions extends StatelessWidget {
+class AdminQuestionsPage extends StatelessWidget {
   Widget _buildQuestionList(List<QuestionModel> questions) {
     Widget questionCard;
     if (questions.length > 0) {
       questionCard = ListView.builder(
         itemBuilder: (BuildContext context, int index) =>
-            QuestionCard(questions[index], index),
+            AdminQuestionCard(questions[index], index),
         itemCount: questions.length,
       );
     } else {

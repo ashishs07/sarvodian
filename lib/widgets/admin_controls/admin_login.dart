@@ -38,7 +38,7 @@ class _AdminLoginState extends State<AdminLogin> {
           return;
         }
         _adminformkey.currentState.save();
-        Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/adminhome');
       },
     );
   }

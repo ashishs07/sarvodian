@@ -30,26 +30,6 @@ class QuestionCard extends StatelessWidget {
           QuestionTitle(question.question),
           ColorDividerLine(150.0),
           _buildAnswer(),
-          ColorDividerLine(10.0),
-          Row(
-            children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.person),
-                onPressed: () {},
-                tooltip: 'UserEmail: ' + question.email,
-              ),
-              //Add MediaQuery for Placement of RaisedButton
-              SizedBox(width: 80.0),
-              RaisedButton(
-                color: Theme.of(context).primaryColor,
-                child: Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushNamed<bool>(
-                      context, '/question/' + index.toString());
-                },
-              ),
-            ],
-          )
         ],
       ),
     );

@@ -4,11 +4,11 @@ import 'package:sarvodian/models/question_model.dart';
 import 'package:sarvodian/widgets/UI elements/questiontitle.dart';
 import 'package:sarvodian/widgets/UI elements/colordividerline.dart';
 
-class QuestionCard extends StatelessWidget {
+class AdminQuestionCard extends StatelessWidget {
   final QuestionModel question;
   final int index;
 
-  QuestionCard(this.question, this.index);
+  AdminQuestionCard(this.question, this.index);
 
   Widget _buildAnswer() {
     if (question.answer != '') {

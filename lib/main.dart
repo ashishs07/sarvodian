@@ -6,6 +6,7 @@ import 'package:sarvodian/scoped-models/main_smodel.dart';
 import 'package:sarvodian/homepage.dart';
 import 'package:sarvodian/pages/auth.dart';
 import 'package:sarvodian/widgets/questions_widgets/answerpage.dart';
+import 'package:sarvodian/widgets/admin_controls/admin_home.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,6 +43,7 @@ class _MyAppState extends State<MyApp> {
         routes: {
           '/': (BuildContext context) => AuthPage(),
           '/home': (BuildContext context) => MyHomePage(),
+          '/adminhome': (BuildContext context) => AdminHomePage(),
         },
         onGenerateRoute: (RouteSettings settings) {
           final List<String> pathElements = settings.name.split('/');
