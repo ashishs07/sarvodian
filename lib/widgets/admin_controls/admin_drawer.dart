@@ -19,7 +19,7 @@ class AdminDrawer extends StatelessWidget {
     return ListTile(
       title: Text('Logout'),
       onTap: () {
-        Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/');
       },
     );
   }
@@ -29,6 +29,10 @@ class AdminDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
+          AppBar(
+            automaticallyImplyLeading: false,
+            title: Text('ADMIN'),
+          ),
           _buildAnswerListTile(context),
           _buildLogoutListTile(context),
         ],

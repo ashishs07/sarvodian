@@ -93,6 +93,16 @@ class HomeDrawer extends StatelessWidget {
     );
   }
 
+  Widget _buildLogoutListTile(BuildContext context) {
+    return ListTile(
+      leading: Icon(Icons.exit_to_app),
+      title: Text('Logout'),
+      onTap: () {
+        Navigator.pushReplacementNamed(context, '/');
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -117,6 +127,7 @@ class HomeDrawer extends StatelessWidget {
           _buildMeritListTile(context),
           _buildContactListTile(context),
           _buildAdminListTile(context),
+          _buildLogoutListTile(context)
         ],
       ),
     );

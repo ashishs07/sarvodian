@@ -4,7 +4,7 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
 import 'package:sarvodian/homepage.dart';
-import 'package:sarvodian/pages/auth.dart';
+import 'package:sarvodian/pages/login_select.dart';
 import 'package:sarvodian/widgets/questions_widgets/answerpage.dart';
 import 'package:sarvodian/widgets/admin_controls/admin_home.dart';
 
@@ -41,8 +41,8 @@ class _MyAppState extends State<MyApp> {
             ),
             iconTheme: IconThemeData(color: Colors.black)),
         routes: {
-          '/': (BuildContext context) => AuthPage(),
-          '/home': (BuildContext context) => MyHomePage(),
+          '/': (BuildContext context) => LoginSelectPage(),
+          '/studenthome': (BuildContext context) => MyHomePage(),
           '/adminhome': (BuildContext context) => AdminHomePage(),
         },
         onGenerateRoute: (RouteSettings settings) {

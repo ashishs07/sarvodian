@@ -11,8 +11,9 @@ class AdminQuestionsPage extends StatelessWidget {
     Widget questionCard;
     if (questions.length > 0) {
       questionCard = ListView.builder(
-        itemBuilder: (BuildContext context, int index) =>
-            AdminQuestionCard(questions[index], index),
+        itemBuilder: (BuildContext context, int index) => AdminQuestionCard(
+            questions[questions.length - index - 1],
+            questions.length - index - 1),
         itemCount: questions.length,
       );
     } else {

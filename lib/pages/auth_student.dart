@@ -1,4 +1,3 @@
-//Completed
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -109,7 +108,7 @@ class _AuthPageState extends State<AuthPage> {
     }
     _formKey.currentState.save();
     model.login(_formData['email'], _formData['password']);
-    Navigator.pushReplacementNamed(context, '/home');
+    Navigator.pushReplacementNamed(context, '/studenthome');
   }
 
   @override
