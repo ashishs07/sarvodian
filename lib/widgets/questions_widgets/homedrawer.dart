@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:sarvodian/pages/eventspage.dart';
-import 'package:sarvodian/pages/batchtimingspage.dart';
-import 'package:sarvodian/pages/sarvodayateam.dart';
-import 'package:sarvodian/pages/studentspage.dart';
-import 'package:sarvodian/pages/contactpage.dart';
+import 'package:sarvodian/pages/student/events_s.dart';
+import 'package:sarvodian/pages/student/timings_s.dart';
+import 'package:sarvodian/pages/student/team_s.dart';
+import 'package:sarvodian/pages/student/merit_s.dart';
+import 'package:sarvodian/pages/student/contact_s.dart';
 
-import 'package:sarvodian/widgets/admin_controls/admin_login.dart';
+import 'package:sarvodian/pages/admin/auth_a.dart';
 
 class HomeDrawer extends StatelessWidget {
   Widget _buildBrowseListTile(BuildContext context) {

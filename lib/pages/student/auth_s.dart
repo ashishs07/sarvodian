@@ -4,6 +4,7 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
 import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
+import 'package:sarvodian/pages/login_main.dart';
 
 class AuthPage extends StatefulWidget {
   @override
@@ -88,6 +89,30 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
+  Widget _buildBottomRightContainer() {
+    return Container(
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: FlatButton(
+          child: Text(
+            'Not Student?',
+            style: TextStyle(
+              //color: Colors.blue,
+              decoration: TextDecoration.underline,
+            ),
+          ),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => LoginSelectPage()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
   Widget _buildSubmitButton() {
     return ScopedModelDescendant<MainModel>(
       builder: (BuildContext context, Widget child, MainModel model) {
@@ -135,6 +160,7 @@ class _AuthPageState extends State<AuthPage> {
                     _buildPasswordTextField(),
                     _buildTermsSwitchTile(),
                     _buildSubmitButton(),
+                    _buildBottomRightContainer(),
                   ],
                 ),
               ),

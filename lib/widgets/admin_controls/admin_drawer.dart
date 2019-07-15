@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sarvodian/widgets/admin_controls/admin_home.dart';
+import 'package:sarvodian/pages/admin/home_a.dart';
 
 class AdminDrawer extends StatelessWidget {
   Widget _buildAnswerListTile(BuildContext context) {
