@@ -6,7 +6,7 @@ import 'package:sarvodian/scoped-models/main_smodel.dart';
 import 'package:sarvodian/widgets/questions_widgets/homedrawer.dart';
 import 'package:sarvodian/widgets/questions_widgets/homefloatingbutton.dart';
 
-class MyHomePage extends StatelessWidget {
+class StudentHomePage extends StatelessWidget {
   Widget _buildAppBar() {
     return SliverAppBar(
       pinned: false,

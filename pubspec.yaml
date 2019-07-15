@@ -45,6 +45,7 @@ flutter:
   assets:
    - assets/theweeknd.jpg
    - assets/sarvo.jpg
+   - assets/stripes.jpg
 
   #  - images/a_dot_ham.jpeg
 
