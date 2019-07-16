@@ -5,7 +5,7 @@ import 'package:sarvodian/scoped-models/main_smodel.dart';
 
 import 'package:sarvodian/pages/student/home_s.dart';
 import 'package:sarvodian/pages/login_main.dart';
-import 'package:sarvodian/widgets/questions_widgets/answerpage.dart';
+import 'package:sarvodian/widgets/admin/answer_a.dart';
 import 'package:sarvodian/pages/admin/home_a.dart';
 
 void main() => runApp(MyApp());

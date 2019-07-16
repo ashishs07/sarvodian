@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:sarvodian/widgets/admin_controls/admin_drawer.dart';
-import 'package:sarvodian/widgets/admin_controls/admin_list.dart';
+import 'package:sarvodian/widgets/admin/drawer_a.dart';
+import 'package:sarvodian/widgets/admin/list_a.dart';
 
 class AdminHomePage extends StatelessWidget {
   @override

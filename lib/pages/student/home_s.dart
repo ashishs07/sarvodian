@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import 'package:sarvodian/widgets/questions_widgets/question_card.dart';
+import 'package:sarvodian/widgets/student/card_s.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
-import 'package:sarvodian/widgets/questions_widgets/homedrawer.dart';
-import 'package:sarvodian/widgets/questions_widgets/homefloatingbutton.dart';
+import 'package:sarvodian/widgets/student/drawer_s.dart';
+import 'package:sarvodian/widgets/student/addq_s.dart';
 
 class StudentHomePage extends StatelessWidget {
   Widget _buildAppBar() {
