@@ -5,8 +5,8 @@ import 'package:sarvodian/pages/student/timings_s.dart';
 import 'package:sarvodian/pages/student/team_s.dart';
 import 'package:sarvodian/pages/student/merit_s.dart';
 import 'package:sarvodian/pages/student/contact_s.dart';
-
-import 'package:sarvodian/pages/admin/auth_a.dart';
+//import 'package:sarvodian/pages/admin/auth_a.dart';
+import 'package:sarvodian/pages/student/settings_s.dart';
 
 class HomeDrawer extends StatelessWidget {
   Widget _buildBrowseListTile(BuildContext context) {
@@ -82,13 +82,26 @@ class HomeDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildAdminListTile(BuildContext context) {
+  /* Widget _buildAdminListTile(BuildContext context) {
     return ListTile(
       leading: Icon(Icons.control_point),
       title: Text('Admin Controls'),
       onTap: () {
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (BuildContext context) => AdminLogin()));
+      },
+    );
+  }*/
+
+  Widget _buildSettingsListTile(BuildContext context) {
+    return ListTile(
+      leading: Icon(Icons.settings),
+      title: Text('Settings'),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => StudentSettingsPage()));
       },
     );
   }
@@ -108,7 +121,8 @@ class HomeDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          AppBar(
+          /*AppBar(
+            backgroundColor: Colors.blue,
             title: Text('Choose'),
             automaticallyImplyLeading: false,
             actions: <Widget>[
@@ -119,14 +133,23 @@ class HomeDrawer extends StatelessWidget {
                 },
               )
             ],
+          ),*/
+          DrawerHeader(
+            child: Container(
+              color: Colors.blue,
+              margin: EdgeInsets.all(0),
+              padding: EdgeInsets.all(0),
+            ),
           ),
+
           _buildBrowseListTile(context),
           _buildEventsListTile(context),
           _buildBatchListTile(context),
           _buildTeamListTile(context),
           _buildMeritListTile(context),
           _buildContactListTile(context),
-          _buildAdminListTile(context),
+          //_buildAdminListTile(context),
+          _buildSettingsListTile(context),
           _buildLogoutListTile(context)
         ],
       ),

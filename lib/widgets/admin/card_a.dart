@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:sarvodian/models/question_model.dart';
 
 import 'package:sarvodian/widgets/UI elements/questiontitle.dart';
 import 'package:sarvodian/widgets/UI elements/colordividerline.dart';
+import 'package:sarvodian/widgets/admin/answer_a.dart';
 
 class AdminQuestionCard extends StatelessWidget {
   final QuestionModel question;
@@ -44,8 +46,13 @@ class AdminQuestionCard extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
                 child: Icon(Icons.edit),
                 onPressed: () {
-                  Navigator.pushNamed<bool>(
-                      context, '/question/' + index.toString());
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => AnswerPage(index)),
+                  );
+                  /*Navigator.pushNamed<bool>(
+                      context, '/question/' + index.toString());*/
                 },
               ),
             ],

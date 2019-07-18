@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
 
+import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
 class MainFloatingButton extends StatefulWidget {

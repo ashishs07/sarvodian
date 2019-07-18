@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
 
+import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
 import 'package:sarvodian/pages/student/home_s.dart';
-import 'package:sarvodian/pages/login_main.dart';
-import 'package:sarvodian/widgets/admin/answer_a.dart';
+import 'package:sarvodian/login_main.dart';
 import 'package:sarvodian/pages/admin/home_a.dart';
 
 void main() => runApp(MyApp());
@@ -45,7 +44,7 @@ class _MyAppState extends State<MyApp> {
           '/studenthome': (BuildContext context) => StudentHomePage(),
           '/adminhome': (BuildContext context) => AdminHomePage(),
         },
-        onGenerateRoute: (RouteSettings settings) {
+        /*onGenerateRoute: (RouteSettings settings) {
           final List<String> pathElements = settings.name.split('/');
 
           if (pathElements[0] != '') {
@@ -57,7 +56,7 @@ class _MyAppState extends State<MyApp> {
                 builder: (BuildContext context) => AnswerPage(index));
           }
           return null;
-        },
+        },*/
         onUnknownRoute: (RouteSettings settings) {
           return MaterialPageRoute(
             builder: (BuildContext context) => StudentHomePage(),

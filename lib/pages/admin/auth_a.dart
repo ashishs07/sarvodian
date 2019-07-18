@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:sarvodian/pages/login_main.dart';
+import 'package:sarvodian/login_main.dart';
+
 import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
 
 class AdminLogin extends StatefulWidget {
@@ -115,8 +116,14 @@ class _AdminLoginState extends State<AdminLogin> {
                     _buildAdminUsernameField(),
                     SizedBox10px(),
                     _buildAdminPasswordField(),
-                    _buildAdminSubmitButton(),
-                    _buildBottomRightContainer(),
+                    Flex(
+                      direction: Axis.horizontal,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        _buildAdminSubmitButton(),
+                        _buildBottomRightContainer(),
+                      ],
+                    ),
                   ],
                 ),
               ),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
 
+import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
+import 'package:sarvodian/login_main.dart';
+
 import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
-import 'package:sarvodian/pages/login_main.dart';
 
 class AuthPage extends StatefulWidget {
   @override

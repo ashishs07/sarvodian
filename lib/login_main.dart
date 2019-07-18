@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
+
 import 'package:sarvodian/pages/student/auth_s.dart';
 import 'package:sarvodian/pages/admin/auth_a.dart';
 import 'package:sarvodian/pages/guest/auth_g.dart';
-import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
 
 class LoginSelectPage extends StatelessWidget {
   DecorationImage _buildBackgroundImage() {
