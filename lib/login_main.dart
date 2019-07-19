@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+//import 'package:scoped_model/scoped_model.dart';
+
+import 'package:sarvodian/scoped-models/Connected_questions.dart';
 
 import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
 
@@ -6,7 +9,24 @@ import 'package:sarvodian/pages/student/auth_s.dart';
 import 'package:sarvodian/pages/admin/auth_a.dart';
 import 'package:sarvodian/pages/guest/auth_g.dart';
 
-class LoginSelectPage extends StatelessWidget {
+class LoginSelectPage extends StatefulWidget {
+  final QuestionSModel model;
+
+  LoginSelectPage(this.model);
+
+  @override
+  State<StatefulWidget> createState() {
+    return _LoginSelectPageState();
+  }
+}
+
+class _LoginSelectPageState extends State<LoginSelectPage> {
+  @override
+  void initState() {
+    widget.model.fetchQuestions();
+    super.initState();
+  }
+
   DecorationImage _buildBackgroundImage() {
     return DecorationImage(
       image: AssetImage('assets/stripes.jpg'),

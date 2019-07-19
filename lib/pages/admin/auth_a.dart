@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:sarvodian/login_main.dart';
-
 import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
 
 class AdminLogin extends StatefulWidget {
@@ -83,10 +81,9 @@ class _AdminLoginState extends State<AdminLogin> {
             ),
           ),
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.pushReplacementNamed(
               context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) => LoginSelectPage()),
+              '/',
             );
           },
         ),

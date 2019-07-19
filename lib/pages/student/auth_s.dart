@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
-import 'package:sarvodian/login_main.dart';
-
 import 'package:sarvodian/widgets/UI elements/10pxsizedbox.dart';
 
 class AuthPage extends StatefulWidget {
@@ -103,11 +101,7 @@ class _AuthPageState extends State<AuthPage> {
             ),
           ),
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) => LoginSelectPage()),
-            );
+            Navigator.pushReplacementNamed(context, '/');
           },
         ),
       ),
