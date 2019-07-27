@@ -58,7 +58,6 @@ class _AnswerPageState extends State<AnswerPage> {
     _formKey.currentState.save();
 
     final QuestionModel question = QuestionModel(
-        id: model.allQuestion[widget.questionIndex].id,
         question: model.allQuestion[widget.questionIndex].question,
         email: model.allQuestion[widget.questionIndex].email,
         answer: passValue);

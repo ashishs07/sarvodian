@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
             ),
             iconTheme: IconThemeData(color: Colors.black)),
         routes: {
-          '/': (BuildContext context) => LoginSelectPage(model),
+          '/': (BuildContext context) => LoginSelectPage(),
           '/studenthome': (BuildContext context) => StudentHomePage(),
           '/adminhome': (BuildContext context) => AdminHomePage(),
         },
@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
         },*/
         onUnknownRoute: (RouteSettings settings) {
           return MaterialPageRoute(
-            builder: (BuildContext context) => LoginSelectPage(model),
+            builder: (BuildContext context) => LoginSelectPage(),
           );
         },
       ),
