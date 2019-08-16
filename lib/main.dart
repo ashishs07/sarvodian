@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//for setup
 import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
