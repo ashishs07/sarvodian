@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//for setup
 import 'package:scoped_model/scoped_model.dart';
 import 'package:sarvodian/scoped-models/main_smodel.dart';
 
@@ -44,19 +43,6 @@ class _MyAppState extends State<MyApp> {
           '/studenthome': (BuildContext context) => StudentHomePage(),
           '/adminhome': (BuildContext context) => AdminHomePage(),
         },
-        /*onGenerateRoute: (RouteSettings settings) {
-          final List<String> pathElements = settings.name.split('/');
-
-          if (pathElements[0] != '') {
-            return null;
-          }
-          if (pathElements[1] == 'question') {
-            final int index = int.parse(pathElements[2]);
-            return MaterialPageRoute<bool>(
-                builder: (BuildContext context) => AnswerPage(index));
-          }
-          return null;
-        },*/
         onUnknownRoute: (RouteSettings settings) {
           return MaterialPageRoute(
             builder: (BuildContext context) => LoginSelectPage(),
