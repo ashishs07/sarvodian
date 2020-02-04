@@ -27,6 +27,7 @@ class _AdminLoginState extends State<AdminLogin> {
         if (value != 'admin') {
           return 'Username Invalid';
         }
+        return null;
       },
       decoration: InputDecoration(
         fillColor: Colors.white,
@@ -45,6 +46,7 @@ class _AdminLoginState extends State<AdminLogin> {
         if (value != 'admin') {
           return 'Password Invalid';
         }
+        return null;
       },
       decoration: InputDecoration(
         fillColor: Colors.white,

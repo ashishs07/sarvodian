@@ -44,6 +44,7 @@ class _AuthPageState extends State<AuthPage> {
                 .hasMatch(value)) {
           return 'Email is required';
         }
+        return null;
       },
       keyboardType: TextInputType.emailAddress,
       onSaved: (String value) {
@@ -69,6 +70,7 @@ class _AuthPageState extends State<AuthPage> {
         if (value.length < 8) {
           return 'Required 8+ characters';
         }
+        return null;
       },
       onSaved: (String value) {
         _formData['password'] = value;
