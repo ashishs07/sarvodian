@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class StudentsPage extends StatelessWidget {
+class StudentSettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meritorious Students'),
+        title: Text('Settings'),
       ),
-      body: Text('Building'),
+      body: Text('data'),
     );
   }
 }

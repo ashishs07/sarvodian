@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class EventsPage extends StatelessWidget {
+class GuestAuthScreen extends StatelessWidget {
+  static const routeName = '/guestauth';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Events'),
+        title: Text('Guest Login'),
       ),
-      body: Text('Building'),
+      body: Text('data'),
     );
   }
 }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:sarvodian/scoped-models/main_smodel.dart';
+import 'package:provider/provider.dart';
 
-import 'package:sarvodian/pages/student/home_s.dart';
-import 'package:sarvodian/login_main.dart';
-import 'package:sarvodian/pages/admin/home_a.dart';
+import './providers/question_provider.dart';
+import './providers/user_provider.dart';
+import './routes.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,36 +17,32 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    final MainModel model = MainModel();
-    return ScopedModel<MainModel>(
-      model: model,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => QuestionProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => UserProvider(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Sarvodian',
         theme: ThemeData(
-            primarySwatch: Colors.teal,
-            primaryColor: Colors.teal,
-            accentColor: Colors.white,
-            fontFamily: 'Karla',
-            buttonTheme: ButtonThemeData(
-              buttonColor: Colors.teal,
-              textTheme: ButtonTextTheme.accent,
-            ),
-            floatingActionButtonTheme: FloatingActionButtonThemeData(
-              foregroundColor: Colors.teal,
-              backgroundColor: Colors.white,
-            ),
-            iconTheme: IconThemeData(color: Colors.black)),
-        routes: {
-          '/': (BuildContext context) => LoginSelectPage(),
-          '/studenthome': (BuildContext context) => StudentHomePage(),
-          '/adminhome': (BuildContext context) => AdminHomePage(),
-        },
-        onUnknownRoute: (RouteSettings settings) {
-          return MaterialPageRoute(
-            builder: (BuildContext context) => LoginSelectPage(),
-          );
-        },
+          fontFamily: 'Karla',
+          primarySwatch: Colors.teal,
+          accentColor: Colors.white,
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.teal,
+            textTheme: ButtonTextTheme.accent,
+          ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: Colors.teal,
+            foregroundColor: Colors.white,
+          ),
+        ),
+        routes: routes,
       ),
     );
   }
