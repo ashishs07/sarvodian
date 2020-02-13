@@ -35,8 +35,14 @@ class StudentDrawer extends StatelessWidget {
   Widget _buildUserAccountHeader(BuildContext context) {
     final userData = Provider.of<UserProvider>(context, listen: false).user;
     return UserAccountsDrawerHeader(
-      accountName: Text('Student'),
-      accountEmail: Text(userData['email']),
+      accountName: Text(
+        'Student',
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      ),
+      accountEmail: Text(
+        userData['email'],
+        style: TextStyle(fontSize: 17),
+      ),
       currentAccountPicture: CircleAvatar(
         child: FlutterLogo(size: 42.0),
         backgroundColor: Colors.white,

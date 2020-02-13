@@ -10,4 +10,9 @@ class QuestionProvider with ChangeNotifier {
   List<QuestionModel> get questions {
     return [..._questions];
   }
+
+  void addQuestion(QuestionModel question) {
+    _questions.add(question);
+    notifyListeners();
+  }
 }

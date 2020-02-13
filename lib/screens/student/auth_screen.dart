@@ -27,6 +27,7 @@ class _StudentAuthScreenState extends State<StudentAuthScreen> {
     _formKey.currentState.save();
     final userData = Provider.of<UserProvider>(context, listen: false);
     userData.setUser(_formData);
+    FocusScope.of(context).unfocus();
     Navigator.of(context).pushReplacementNamed(StudentHomeScreen.routeName);
   }
 
