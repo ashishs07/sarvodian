@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../providers/user_provider.dart';
 
 import '../select_login.dart';
-import './home_screen.dart';
+import './home_screen/home_screen.dart';
 import './event_screen.dart';
 import './batch-timings_screen.dart';
 import './sarvoteam_screen.dart';

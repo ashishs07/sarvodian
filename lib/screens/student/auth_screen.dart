@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/user_provider.dart';
-import './home_screen.dart';
+import './home_screen/home_screen.dart';
 import '../../widgets/not_role.dart';
 
 class StudentAuthScreen extends StatefulWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/question_provider.dart';
-import './drawer.dart';
-import './widgets/question_card.dart';
-import './widgets/add_question.dart';
+import '../../../providers/question_provider.dart';
+import '../drawer.dart';
+import './question_card.dart';
+import './add_question.dart';
 
 class StudentHomeScreen extends StatelessWidget {
   static const routeName = '/student-home';

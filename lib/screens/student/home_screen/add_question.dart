@@ -15,18 +15,55 @@ class StudentAddQuestion extends StatefulWidget {
 }
 
 class _StudentAddQuestionState extends State<StudentAddQuestion> {
+  final _questionTC = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  String _question;
   List<File> _images = [];
   File _currentImage;
 
   void _pickAndCropImage() async {
-    await _pickImage();
+    ImageSource source = await showDialog(
+        context: context,
+        builder: (ctx) => Dialog(
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                child: Wrap(
+                  alignment: WrapAlignment.spaceAround,
+                  direction: Axis.horizontal,
+                  children: <Widget>[
+                    IconButton(
+                      icon: Icon(
+                        Icons.insert_photo,
+                        color: Colors.red,
+                        size: 50,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop(ImageSource.gallery);
+                      },
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.camera_alt,
+                        color: Colors.blue,
+                        size: 50,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop(ImageSource.camera);
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ));
+    if (source == null) {
+      return;
+    }
+
+    await _pickImage(source);
     await _cropImage();
   }
 
-  Future<void> _pickImage() async {
-    _currentImage = await ImagePicker.pickImage(source: ImageSource.camera);
+  Future<void> _pickImage(ImageSource source) async {
+    _currentImage = await ImagePicker.pickImage(source: source);
     if (_currentImage != null) {
       Fluttertoast.showToast(msg: 'Image clicked');
     } else {
@@ -66,7 +103,9 @@ class _StudentAddQuestionState extends State<StudentAddQuestion> {
     final questionData = Provider.of<QuestionProvider>(context, listen: false);
 
     questionData.addQuestion(QuestionModel(
-        question: _question, email: userData.user['email'], images: _images));
+        question: _questionTC.text,
+        email: userData.user['email'],
+        images: _images));
 
     _formKey.currentState.reset();
     FocusScope.of(context).unfocus();
@@ -113,6 +152,7 @@ class _StudentAddQuestionState extends State<StudentAddQuestion> {
         border: OutlineInputBorder(),
         labelText: 'Describe your question.',
       ),
+      controller: _questionTC,
       minLines: 1,
       maxLines: 5,
       validator: (value) {
@@ -122,7 +162,7 @@ class _StudentAddQuestionState extends State<StudentAddQuestion> {
         return null;
       },
       onSaved: (value) {
-        _question = value;
+        _questionTC.text = value;
       },
     );
   }
